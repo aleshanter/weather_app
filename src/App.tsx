@@ -8,6 +8,8 @@ import { SearchHistory } from "./features/SearchHistory";
 const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
 const hasApiKey = !!apiKey && apiKey.trim().length > 0;
 
+//FYI: not optimal way to place logic here - App must be clear of business logic and current
+//content should be in a separate component (like it's own page)
 function App() {
   const [location, setLocation] = useState("");
   const { data, isLoading, isFetching, isError } = useGetForecastByCityQuery(
