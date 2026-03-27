@@ -2,7 +2,7 @@ export function debounce<A extends unknown[]>(
   fn: (...args: A) => void,
   waitMs: number
 ): (...args: A) => void {
-  let id: number | undefined;
+  let id: ReturnType<typeof setTimeout> | undefined;
 
   return (...args: A) => {
     clearTimeout(id);
